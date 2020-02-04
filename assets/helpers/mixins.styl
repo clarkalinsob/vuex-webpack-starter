@@ -1,0 +1,72 @@
+transform()
+  -webkit-transform arguments /* Safari & Chrome */
+  -moz-transform arguments /* Firefox */
+  transform arguments /* W3C */
+
+mask()
+  -webkit-mask arguments
+  mask arguments
+  -webkit-mask-size cover
+  mask-size cover
+
+noselect()
+  -webkit-touch-callout none // iOS Safari
+  -webkit-user-select none // Safari
+  -khtml-user-select none // Konqueror HTML
+  -moz-user-select none // Old versions of Firefox
+  -ms-user-select none // Internet Explorer/Edge
+  user-select none // Non-prefixed version, currently supported by Chrome, Opera and Firefox
+
+position($p, $t = false, $r = false, $b = false, $l = false)
+  position $p
+  if ($t || $t is 0) and $t isnt false
+    top $t
+  if ($r || $r is 0) and $r isnt false
+    right $r
+  if ($b || $b is 0) and $b isnt false
+    bottom $b
+  if ($l || $l is 0) and $l isnt false
+    left $l
+
+width-height($w, $h = $w)
+  width $w
+  height $h
+
+media-screen($min = false, $max = false)
+  if $min && $max
+    @media only screen and (min-width : $min) and (max-width : $max - 1)
+      { block }
+  else if $min and !$max
+    @media only screen and (min-width : $min)
+      { block }
+  else if !$min and $max
+    @media only screen and (max-width : $max - 1)
+      { block }
+
+flexbox($a = false, $j = false, $w = false, $d = false, $inline = false)
+  if $inline
+    display inline-flex
+  else
+    display flex
+  if $j
+    justify-content $j
+  if $a
+    align-items $a
+  if $d
+    flex-direction $d
+  if $w
+    flex-wrap $w
+
+gradient-color()
+  $direction = shift(arguments)
+  background -webkit-linear-gradient(left, arguments)
+  background linear-gradient(to right, arguments)
+  if $direction == 'radial'
+    background -webkit-radial-gradient(center, ellipse cover, arguments)
+    background radial-gradient(ellipse at center, arguments);
+  else if $direction == 'vertical'
+    background -webkit-linear-gradient(top, arguments)
+    background linear-gradient(to bottom, arguments)
+  else if $direction == 'horizontal'
+    background -webkit-linear-gradient(left, arguments)
+    background linear-gradient(to right, arguments)

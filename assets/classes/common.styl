@@ -1,0 +1,181 @@
+*
+  box-sizing border-box
+  margin 0
+  padding 0
+  text-decoration none
+
+body
+  color $color-text-primary
+  font-family 'SourceSansPro', sans-serif
+  font-size 14px
+
+h1, h2, h3, h4
+  font-weight bold
+  margin 0
+h1
+  font-size 2em
+h2
+  font-size 1.75em
+h3
+  font-size 1.45em
+
+a
+  color inherit
+  cursor pointer
+  transition color 0.2s
+  &:focus, &:hover, &:active, &.--active
+    color $color-accent1
+
+ul
+  list-style-type none
+
+img
+  display block
+
+.main
+  height 100vh
+
+.wrapper
+  width 100%
+  .container
+    margin auto
+    max-width $screen-xl
+    padding 0 20px
+    +media-screen(false, $screen-sm)
+      padding 0 15px
+    +media-screen($screen-sm)
+      width 90%
+.img-wrapper img
+  width-height 100%
+  display block
+  object-fit cover
+  object-position left
+
+.--accent1
+  color $color-accent1
+.--accent2
+  color $color-accent2
+
+.content-header
+  flexbox center
+  color $color-text-lightgrey
+  padding 30px 20px 20px
+  border-bottom 1px solid $color-border-grey
+  h2
+    flex 1 0 auto
+    font-size 1.75em
+    font-weight 500
+  .ico
+    background $color-border-grey
+    &:hover, &:focus, &.--active
+      background-color $color-accent1
+    &:not(:last-child)
+      margin-right 0.5em
+  a
+    cursor pointer
+    &:not(:last-child)
+      margin-right 2em
+// ::: .content-header
+
+input, textarea
+  border-radius 4px
+  border 1px solid $color-border-grey
+  padding 0.75em 1em
+  &::placeholder
+    color $color-text-grey
+textarea
+  min-height calc(2em + 16px)
+  max-height calc(6em + 16px)
+  overflow auto
+  resize vertical
+  scrollbar-width thin
+  scrollbar-color alpha($color-accent2, 70%)
+  &::-webkit-scrollbar
+    width 4px
+  &::-webkit-scrollbar-thumb
+    background-color alpha($color-accent2, 70%)
+    border-radius 4px
+  &::-webkit-scrollbar-track
+    background-color $color-border-grey
+
+.search-wrapper
+  position relative
+  .ico-search
+    position absolute 50% false false 1.5em
+    width-height 1em
+    transform translate(-50%, -50%)
+    background-color $color-accent2
+    display inline-block
+  input[type=text]
+    padding 0.75em 0.5em 0.75em 3em
+    width 100%
+// ::: .search-wrapper
+
+.pagination
+  flexbox center center
+  margin-bottom 20px
+  .__page
+    transition background 2s
+    border 1px solid $color-border-grey
+    border-radius 4px
+    gradient-color vertical, $color-base 80%, $color-border-grey 120%
+    &:not(:last-child)
+      margin-right 4px
+    &:not(:first-child)
+      margin-left 4px
+    &:hover, &.--current
+      color $color-accent1
+    &.--current
+      gradient-color vertical, $color-base 80%, $color-accent1 120%
+    &.--disabled
+      background $color-base-off
+      color $color-text-lightgrey
+      cursor default
+    a
+      noselect()
+      color inherit
+      display inline-block
+      padding 6px 8px
+    a:focus
+      outline none
+
+label.file-upload-wrapper
+  display block
+  input[type=file]
+    padding 0
+    display none
+  .__filename
+    background-color alpha($color-accent2, 10%)
+    padding 0 0.7rem
+
+.article
+  .__title
+    padding 0.5rem 0
+
+.article, .article-preview
+  .__title
+    color $color-accent1
+  .__date, .__category
+    color $color-text-grey
+    font-size 1.05em
+    margin-bottom 0.875rem
+
+.article-preview
+  flexbox false false false column
+  .__thumb
+    background-color $color-base-grey
+    margin-bottom 1.25rem
+    height 225px
+    overflow hidden
+    width-height 100% auto
+  .__caption
+    flexbox flex-start false false column
+    flex 1
+  .__title
+    margin-bottom 0.875rem
+  .__text
+    color lightness($color-text-grey, 50%)
+    margin-bottom 1.25rem
+  .__readmore
+    padding 7px 24px
+    margin-top auto

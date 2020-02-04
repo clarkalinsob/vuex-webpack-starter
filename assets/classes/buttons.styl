@@ -1,0 +1,46 @@
+button
+  border none
+  cursor pointer
+.btn
+  border-radius 4px
+  padding 8px 12px
+  cursor pointer
+  transition color 0.2s, background-color 0.2s
+.btn-accent1, .btn-ghost1, .btn-accent2, .btn-ghost2, .btn-accent3
+  @extends .btn
+  padding 7px 11px
+  font-weight 500
+.btn-accent1, .btn-ghost1
+  border 1px solid $color-accent1
+.btn-accent1
+  background-color $color-accent1
+  color $color-base
+  &:hover, &:active, &:focus
+    background-color alpha($color-accent1, 80%)
+    color $color-base
+.btn-ghost1
+  background-color $color-base
+  color $color-accent1
+  &:hover, &:active, &:focus
+    background-color alpha($color-accent1, 40%)
+    color $color-base
+.btn-accent2, .btn-ghost2
+  border 1px solid $color-accent2
+.btn-accent2
+  background-color $color-accent2
+  color $color-base
+  &:hover, &:active, &:focus
+    background-color alpha($color-accent2, 80%)
+    color $color-base
+.btn-ghost2
+  background-color $color-base
+  color $color-accent2
+  &:hover, &:active, &:focus
+    background-color alpha($color-accent2, 40%)
+    color $color-base
+.btn-accent3
+  border 1px solid $color-accent3
+  background-color $color-accent3
+  color $color-base
+  &:hover, &:active, &:focus
+    background-color alpha($color-accent3, 80%)
