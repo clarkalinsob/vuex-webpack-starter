@@ -5,3 +5,4 @@ Includes:
     lint/eslint
     style/stylus
     test/jest
+    state management/vuex
