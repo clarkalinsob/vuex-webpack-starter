@@ -33,7 +33,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.1.2",
     "eslint-plugin-vue-libs": "^4.0.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "jest": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",
